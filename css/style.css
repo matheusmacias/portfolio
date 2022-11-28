@@ -11,11 +11,11 @@ img {
 }
 
 .fundo>div:nth-child(1) {
-    background-color: #EBB4B4;
+    background-color: #59be40;
 }
 
 .fundo>div:nth-child(1)>div:nth-child(2) {
-    background-color: #e0a6a6;
+    background-color: #4ca336;
 }
 
 .aboutme {
@@ -25,7 +25,7 @@ img {
 }
 
 .info_aboutme {
-    padding: 0px 20px 20px 20px;
+    padding: 0px 20px 0px 20px;
 }
 
 .aboutme>.img>h1>img {
@@ -49,15 +49,26 @@ img {
 
 .hab-itens {
     list-style: none;
+    margin-top: 5px;
 }
 
 .hab-itens>li>span {
     font-size: 0px;
 }
 
+.hab-itens>li {
+    margin: 4px;
+}
+
 .hab-itens>li>i {
     font-size: 80px;
-    margin: 4px;
+    color: white;
+}
+
+.hab-itens>li>i:hover {
+    font-size: 80px;
+    color: rgb(27, 223, 115);
+    transition: 0.3s;
 }
 
 .othergrid {
@@ -88,13 +99,17 @@ img {
 
 .infos {
     color: #ffffff;
-    text-shadow: 1px 1px 2px rgb(228, 123, 123), 0 0 1em rgb(193, 193, 247), 0 0 0.2em black;
+    text-shadow: 1px 1px 2px #85a17e, 0 0 1em rgb(193, 193, 247), 0 0 0.2em black;
     margin-left: 10px;
     margin-bottom: 10px;
 }
 
 .rodape {
-    background-color: #EBB4B4;
+    background-color: #59be40;
+}
+
+.contato h3 {
+    font-size: 22px;
 }
 
 .contato ul {
@@ -106,10 +121,16 @@ img {
 .contato ul li {
     padding: 2px;
     font-size: 17px;
+    margin-top: 5px;
 }
 
 
 .contato ul li a {
     color: black;
     text-decoration: none;
+    border-bottom: 2px dotted #000;
+}
+
+.colorh2 {
+    color: white;
 }
