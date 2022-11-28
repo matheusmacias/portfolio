@@ -86,11 +86,6 @@ img {
 
 }
 
-.bg_preto:hover~ {
-    background: radial-gradient(302.57% 306.81% at 50% 200%, #1e2122 0%, rgba(22, 23, 23, 0) 100%);
-
-}
-
 .infos {
     color: #ffffff;
     text-shadow: 1px 1px 2px rgb(228, 123, 123), 0 0 1em rgb(193, 193, 247), 0 0 0.2em black;
