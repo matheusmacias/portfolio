@@ -4,188 +4,171 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Portfólio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-
-    <style>
-        body {
-            background-color: #f1f1f1;
-        }
-
-        img {
-            width: 100%;
-        }
-
-        .fundo>div:nth-child(1) {
-            min-height: 400px;
-        }
-
-        .fundo>div:nth-child(1) {
-            background-color: #EBB4B4;
-        }
-
-        .fundo>div:nth-child(1)>div:nth-child(2) {
-            background-color: #e0a6a6;
-        }
-
-        .aboutme {
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .info_aboutme {
-            padding: 0px 20px 20px 20px;
-        }
-
-        .aboutme>.img>img {
-            width: 180px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .subinfos {
-            height: 100%;
-        }
-
-        .subinfos>div:nth-child(1) {
-            padding: 15px;
-        }
-
-        .hab-itens {
-            list-style: none;
-        }
-
-        .hab-itens>li>span {
-            font-size: 0px;
-        }
-
-        .hab-itens>li>i {
-            font-size: 80px;
-            margin: 4px;
-        }
-
-        .othergrid {
-            min-height: 150px;
-        }
-
-        .site {
-            cursor: pointer;
-            position: relative;
-        }
-
-        .bg_preto {
-            background: radial-gradient(302.57% 306.81% at 50% 250%, #1e2122 0%, rgba(22, 23, 23, 0) 100%);
-            width: 100%;
-            height: 100%;
-            position: absolute;
-        }
-
-        .bg2 {
-            background: radial-gradient(302.57% 306.81% at 50% 225%, #1e2122 0%, rgba(22, 23, 23, 0) 100%);
-
-        }
-
-        .bg_preto:hover {
-            background: radial-gradient(302.57% 306.81% at 50% 200%, #1e2122 0%, rgba(22, 23, 23, 0) 100%);
-
-        }
-
-        .infos {
-            color: #ffffff;
-            text-shadow: 1px 1px 2px rgb(228, 123, 123), 0 0 1em rgb(193, 193, 247), 0 0 0.2em black;
-            margin-left: 10px;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="container-md fundo">
-        <div class="row">
-            <div class="col-lg-7 p-4">
+    <header>
+        <div class="container-md fundo">
+            <div class="row">
+                <div class="col-lg-7 p-4">
 
-                <section class="aboutme d-sm-flex">
+                    <section class="aboutme d-sm-flex">
 
-                    <div class="img d-flex justify-content-center mb-4 mb-md-0">
-                        <img src="images/matheus.jpg" alt="">
-                    </div>
-
-                    <div class="info_aboutme">
-                        <h2>Printf(“Hello, World!”);</h2>
-                        <p>Olá, me chamo Matheus, sou estudante de
-                            Análise e desenvolvimento de sistema,
-                            entendo de front-end porém estou focando no back-end,
-                            meu foco atualmente é no Java, estou a procura de oportunidades.
-                        </p>
-                    </div>
-
-                </section>
-
-
-            </div>
-            <div class="col-lg-5">
-                <div class="row subinfos d-flex flex-column">
-
-                    <div class="col">
-
-                        <section class="habilidades">
-                            <h3>Habilidades</h3>
-                            <ul class="hab-itens d-flex flex-wrap p-0">
-                                <li><span>html5</span><i class="devicon-html5-plain-wordmark colored"></i></li>
-                                <li><span>css3</span><i class="devicon-css3-plain-wordmark colored"></i>s</li>
-                                <li><span>bootstrap</span><i class="devicon-bootstrap-plain colored"></i></li>
-                                <li><span>java</span><i class="devicon-java-plain-wordmark colored"></i></li>
-                                <li><span>postgresql</span><i class="devicon-postgresql-plain-wordmark colored"></i>
-                                </li>
-                                <li><span>php</span><i class="devicon-php-plain colored"></i></li>
-                            </ul>
-                        </section>
-
-                    </div>
-
-                    <div class="col">
-                        <div class="row othergrid">
-
-                            <div class="col-sm-6 p-0">
-                                <section class="site">
-                                    <div class="bg_preto d-flex justify-content-end flex-column">
-                                        <div class="infos d-flex flex-column">
-                                            <span>Em destaque</span>
-                                            <span>Projeto da faculdade</span>
-                                        </div>
-                                    </div>
-                                    <img src="images/site.png" alt="">
-                                </section>
-                            </div>
-
-                            <div class="col-sm-6 p-0">
-                                <section class="site">
-                                    <div class="bg_preto bg2 d-flex justify-content-end flex-column">
-                                        <div class="infos d-flex flex-column">
-                                            <span>Em destaque</span>
-                                            <span>Login/Registro em java</span>
-                                        </div>
-                                    </div>
-                                    <img src="images/site2.png" alt="">
-                                </section>
-                            </div>
-
+                        <div class="img d-flex justify-content-center mb-4 mb-md-0">
+                            <h1><span>Portfólio de Matheus Macias</span><img src="images/matheus.jpg" alt=""></h1>
                         </div>
-                    </div>
+
+                        <div class="info_aboutme">
+                            <h2>Printf(“Hello, World!”);</h2>
+                            <p>Olá, me chamo Matheus, sou estudante de
+                                Análise e desenvolvimento de sistema,
+                                tenho conhecimento de front-end porém estou
+                                focando em banco de dados relacionais e back-end com java.
+                            </p>
+                        </div>
+
+                    </section>
 
 
                 </div>
+                <div class="col-lg-5">
+                    <div class="row subinfos d-flex flex-column">
+
+                        <div class="col">
+
+                            <section class="habilidades">
+                                <h3>Habilidades</h3>
+                                <ul class="hab-itens d-flex flex-wrap p-0">
+                                    <li><span>html5</span><i class="devicon-html5-plain-wordmark colored"></i></li>
+                                    <li><span>css3</span><i class="devicon-css3-plain-wordmark colored"></i></li>
+                                    <li><span>bootstrap</span><i class="devicon-bootstrap-plain colored"></i></li>
+                                    <li><span>java</span><i class="devicon-java-plain-wordmark colored"></i></li>
+                                    <li><span>postgresql</span><i class="devicon-postgresql-plain-wordmark colored"></i>
+                                    </li>
+                                    <li><span>php</span><i class="devicon-php-plain colored"></i></li>
+                                </ul>
+                            </section>
+
+                        </div>
+
+                        <div class="col">
+                            <div class="row othergrid">
+
+                                <div class="col-sm-6 p-0">
+                                    <section class="site">
+                                        <a href="https://matheusmacias.github.io/trabalho-faculdade/site/">
+                                            <div class="bg_preto d-flex justify-content-end flex-column">
+                                                <div class="infos d-flex flex-column">
+                                                    <span>Em destaque</span>
+                                                    <span>Trabalho da faculdade</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <img src="images/site.png" alt="">
+                                    </section>
+                                </div>
+
+                                <div class="col-sm-6 p-0">
+                                    <section class="site">
+                                        <a href="https://github.com/matheusmacias/javaWeb">
+                                            <div class="bg_preto bg2 d-flex justify-content-end flex-column">
+                                                <div class="infos d-flex flex-column">
+                                                    <span>Em destaque</span>
+                                                    <span>Login/Registro em java</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <img src="images/site2.png" alt="">
+                                    </section>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </header>
+    <main>
+        <div class="container-md mb-4">
+            <div class="d-flex justify-content-center mt-4">
+                <h2>PROJETOS</h2>
+            </div>
 
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Projeto com arduino em andamento</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="32%" y="50%" fill="#eceeef"
+                                dy=".3em">Em andamento...</text>
+                        </svg>
+                        <div class="card-body">
+                            <p class="card-text">Projeto da faculdade em grupo com arduino.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Projeto mobile em andamento</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="32%" y="50%" fill="#eceeef"
+                                dy=".3em">Em andamento...</text>
+                        </svg>
+                        <div class="card-body">
+                            <p class="card-text">Projeto mobile da faculdade em grupo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Projeto pessoal em andamento</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="32%" y="50%" fill="#eceeef"
+                                dy=".3em">Em andamento...</text>
+                        </svg>
+                        <div class="card-body">
+                            <p class="card-text">Projeto pessoal em andamento...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+    </main>
+    <footer>
 
+        <div class="container-md rodape">
+            <div class="row">
+                <div class="col">
+                    <section class="contato p-3">
+                        <h3>Contato:</h3>
+                        <ul class="list-style-none">
+                            <li><i class="devicon-linkedin-plain colored"></i> <a
+                                    href="https://www.linkedin.com/in/matheusmacias/">Linkedin: Matheus Macias</a>
+                            </li>
+                            <li> <i class="devicon-facebook-plain colored"></i> <a
+                                    href="https://www.facebook.com/matheus.macias.90/">Facebook: Matheus Macias</a>
+                            </li>
+                            <li>Email: matheusmacias3@gmail.com</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
