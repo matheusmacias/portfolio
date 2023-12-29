@@ -13,6 +13,8 @@ class Index(TemplateView):
         context['experiences'] = Experience.objects.filter(user=context['owner']).order_by('-is_current', '-start_date')
         context['article'] = Article.objects.filter(is_highlighted=True).first()
         context['articles'] = Article.objects.filter(is_highlighted=False).order_by('-created_at')[:4]
+        context['article_academic'] = Article.objects.filter(tags__name__in=['Acadêmico'])
+        context['article_freelance'] = Article.objects.filter(tags__name__in=['Freelance'])
         return context
 
 

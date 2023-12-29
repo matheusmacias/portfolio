@@ -41,7 +41,7 @@ jobs:
           pass: ${{ secrets.SSH_PASS }}
           connect_timeout: 30s
           last_ssh: |
-            cd /root/fbg-pa
+            cd /www/data/portfolio
             git fetch
             git reset --hard origin/main
             git pull

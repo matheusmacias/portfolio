@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
-
-from django.urls import reverse_lazy
 from dotenv import load_dotenv
 
 load_dotenv()

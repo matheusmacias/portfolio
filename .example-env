@@ -1,6 +1,6 @@
 export SECRET_KEY = 'suc%+-6@me%(qc#1v9q2!aty2)2dkw9#(%bfns0+&x#uc(j2ud'
 export DB_USED='sqlite'
-export DB_NAME = 'fbg_pa'
+export DB_NAME = 'matheusmacias'
 export DB_USER = 'root'
 export DB_PASSWORD = '...'
 export DB_HOST = 'localhost'

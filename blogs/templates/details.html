@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block head %}
+    <title>{{ article.headline }}</title>
+{% endblock %}
+
 {% block content %}
     <!-- One -->
     {% if article %}
@@ -11,7 +16,7 @@
                 {% if breadcrumbs %}
                     {% include "dynamic_breadcrumbs/breadcrumbs.html" with breadcrumbs=breadcrumbs %}
                 {% endif %}
-                <h2 class="mb-2">{{ article.headline }}</h2>
+                <h1 class="mb-2">{{ article.headline }}</h1>
             </header>
             <span class="ck ck-content">
                 {{ article.content|safe }}

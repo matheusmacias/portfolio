@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block head %}
+    <title>Matheus Macias</title>
+{% endblock %}
 {% block content %}
     <!-- One -->
     {% if article %}
@@ -39,7 +43,33 @@
     <section id="two">
         <h2>Últimos posts</h2>
         <div class="row">
-            {% include 'components/card.html' %}
+            {% include 'components/card.html' with articles=articles %}
         </div>
     </section>
+
+    {% if article_freelance %}
+        <section id="two">
+            <h2>Trabalhos Freelance</h2>
+            <div class="row">
+                {% include 'components/card.html' with articles=article_freelance %}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if article_academic %}
+        <section id="two">
+            <h2>Trabalhos Acadêmicos</h2>
+            <div class="row">
+                {% include 'components/card.html' with articles=article_academic %}
+            </div>
+        </section>
+    {% endif %}
+
+    <ul class="actions">
+        <li><a href="{% url 'blogs:article_list' %}" class="button">Visualizar todas as publicações</a></li>
+    </ul>
+{% endblock %}
+
+{% block user %}
+    <h1 class="d-none">Matheus Macias</h1>
 {% endblock %}
