@@ -1,8 +1,8 @@
 FROM alpine:latest
 
 RUN apk update && apk add --no-cache zsh git python3 py3-pip tzdata pkgconfig
-# adicionar as dependencias do mysql
-RUN apk add --no-cache mysql-dev gcc musl-dev python3-dev libffi-dev openssl-dev
+# Add PostgreSQL dependencies
+RUN apk add --no-cache postgresql-dev gcc musl-dev python3-dev libffi-dev openssl-dev
 
 SHELL ["/bin/zsh", "-c"]
 
@@ -14,8 +14,8 @@ RUN echo "America/Belem" > /etc/timezone
 WORKDIR /app
 
 COPY requirements.txt .
+# Install psycopg2-binary instead of psycopg2 for PostgreSQL
 RUN pip install --break-system-packages -r requirements.txt
-
 
 COPY . .
 
