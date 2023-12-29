@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- One -->
+    {% if article %}
+        <section id="one">
+            <header class="major">
+                {% if article.image %}
+                    <img src="{{ article.image.url }}" alt="{{ article.image.alt }}" class="image_principal mb-2"/>
+                {% endif %}
+                {% if breadcrumbs %}
+                    {% include "dynamic_breadcrumbs/breadcrumbs.html" with breadcrumbs=breadcrumbs %}
+                {% endif %}
+                <h2 class="mb-2">{{ article.headline }}</h2>
+            </header>
+            <span class="ck ck-content">
+                {{ article.content|safe }}
+            </span>
+
+        </section>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% load static %}
+{% if articles %}
+    {% for article in articles %}
+        <article class="col-6 col-12-xsmall work-item">
+            <a href="{% url 'blogs:article_detail' article.slug %}" class="image fit thumb">
+                {% if article.image %}
+                    <img src="{{ article.image.url }}" alt="{{ article.headline }}"/>
+                {% else %}
+                    <img src="{% static 'images/thumbs/02.jpg' %}" alt=""/>
+                {% endif %}
+            </a>
+
+            <a href="{% url 'blogs:article_detail' article.slug %}" class="text-secondary">
+                <h3>{{ article.headline }}</h3>
+                <p>{{ article.content|striptags|safe|slice:":150" }}{% if article.content|length > 150 %}
+                    ...{% endif %}</p>
+            </a>
+        </article>
+    {% endfor %}
+{% endif %}
