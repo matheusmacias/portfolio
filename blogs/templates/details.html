@@ -16,7 +16,12 @@
                 {% if breadcrumbs %}
                     {% include "dynamic_breadcrumbs/breadcrumbs.html" with breadcrumbs=breadcrumbs %}
                 {% endif %}
-                <h1 class="mb-2">{{ article.headline }}</h1>
+                <h1 class="mb-0">{{ article.headline }}</h1>
+                {% if article.created_at|date:"d/m/Y H:i" != article.updated_at|date:"d/m/Y H:i" %}
+                    <span class="meta d-block mb-2">Atualizado - {{ article.updated_at|date:"d/m/Y  H:i" }}</span>
+                {% else %}
+                    <span class="meta d-block mb-2">Publicado - {{ article.created_at|date:"d/m/Y  H:i" }}</span>
+                {% endif %}
             </header>
             <span class="ck ck-content">
                 {{ article.content|safe }}

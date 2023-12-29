@@ -14,9 +14,10 @@
             <p class="text-justify">
                 {{ article.content|striptags|safe|slice:":350" }}{% if article.content|length > 150 %}...{% endif %}
             </p>
-            <ul class="actions">
-                <li><a href="{% url 'blogs:article_detail' article.slug %}" class="button">Mais informações</a></li>
-            </ul>
+
+            {% include 'components/button.html' with button_url='blogs:article_detail' param=article.slug button_text='Mais informações' %}
+
+
         </section>
     {% endif %}
 
@@ -65,9 +66,7 @@
         </section>
     {% endif %}
 
-    <ul class="actions">
-        <li><a href="{% url 'blogs:article_list' %}" class="button">Visualizar todas as publicações</a></li>
-    </ul>
+    {% include 'components/button.html' with button_url='blogs:article_list' button_text='Visualizar todas as publicações' %}
 {% endblock %}
 
 {% block user %}

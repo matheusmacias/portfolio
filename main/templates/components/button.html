@@ -1,0 +1,9 @@
+<ul class="actions">
+    <li><a href="
+    {% if param %}
+        {% url button_url param %}
+    {% else %}
+        {% url button_url %}
+    {% endif %}
+    " class="button">{{ button_text }}</a></li>
+</ul>
