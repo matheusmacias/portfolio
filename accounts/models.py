@@ -35,6 +35,8 @@ class Technology(models.Model):
     link = models.URLField('Link', blank=True, null=True)
 
     def __str__(self):
+        if not self.user:
+            return self.name
         return f'{self.user.username} - {self.name}'
 
 
