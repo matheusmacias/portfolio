@@ -24,4 +24,4 @@ services:
       - ./media:/www/data/media
     depends_on:
       - web
-    command: sh -c "/app/configs/certbot.sh && nginx -g 'daemon off;'"
+        # command: sh -c "/app/configs/certbot.sh && nginx -g 'daemon off;'"

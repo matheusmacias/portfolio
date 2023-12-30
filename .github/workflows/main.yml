@@ -1,7 +1,8 @@
 name: Django CI
 
 on:
-  workflow_dispatch:
+  push:
+    branches: ["main"]
 
 jobs:
   build:
@@ -38,7 +39,7 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           user: ${{ secrets.SSH_USER }}
-          pass: ${{ secrets.SSH_PASS }}
+          key: ${{ secrets.SSH_KEY }}
           connect_timeout: 30s
           last_ssh: |
             cd /www/data/portfolio
