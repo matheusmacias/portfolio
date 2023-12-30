@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.views.generic import TemplateView
-from accounts.models import User, Experience
+from accounts.models import User
 from blogs.models import Article
 
 
@@ -9,8 +9,6 @@ class Index(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['owner'] = User.objects.filter(is_owner=True).first()
-        context['experiences'] = Experience.objects.filter(user=context['owner']).order_by('-is_current', '-start_date')
         context['article'] = Article.objects.filter(is_highlighted=True).first()
         context['articles'] = Article.objects.filter(is_highlighted=False).order_by('-created_at')[:4]
         context['article_academic'] = Article.objects.filter(tags__name__in=['Acadêmico'])

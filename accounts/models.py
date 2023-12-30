@@ -29,14 +29,24 @@ class User(AbstractUser):
         return self.username
 
 
+class Technology(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='technologies', blank=True, null=True)
+    name = models.CharField('Nome', max_length=100, blank=False, null=False)
+    link = models.URLField('Link', blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.user.username} - {self.name}'
+
+
 class Experience(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='experiences')
     company = models.CharField('Empresa', max_length=100, blank=True, null=True)
     position = models.CharField('Cargo', max_length=100, blank=True, null=True)
-    description = models.TextField('Descrição', blank=True, null=True)
+    description = CKEditor5Field("Descrição", config_name="extends", blank=True, null=True)
     start_date = models.DateField('Data de início', blank=True, null=True)
     end_date = models.DateField('Data de término', blank=True, null=True)
     is_current = models.BooleanField('Atualmente', default=False)
+    technologies = models.ManyToManyField(Technology, blank=True)
 
     def save(self, *args, **kwargs):
         if self.is_current:

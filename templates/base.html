@@ -25,9 +25,23 @@
     {% if owner %}
         <div class="inner">
             <a href="#" class="image avatar"><img src="{{ owner.avatar.url }}" alt=""/></a>
-            <h2 class="text-white h3 d-block">{{ owner.first_name }} {{ owner.last_name }}</h2>
+            <h2 class="text-white h3 d-block mb-0">{{ owner.first_name }} {{ owner.last_name }}</h2>
             {% block user %}
             {% endblock %}
+
+            {% if owner.technologies.all %}
+                <div class="technologies d-flex flex-column align-items-center align-items-lg-end small">
+                    <ul class="d-flex m-0 list-unstyled flex-wrap justify-content-center">
+                        {% for technology in owner.technologies.all %}
+                            <li>
+                                <a href="{{ technology.link }}" target="_blank">{{ technology.name }}</a>
+                                {% if not forloop.last %},{% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
             <span class="ck ck-content">
             {{ owner.description|safe }}
         </span>
@@ -35,15 +49,18 @@
     {% endif %}
     <div class="inner">
         <ul class="icons">
-            <li><a href="https://www.linkedin.com/in/matheusmacias/" class="icon brands fa-linkedin"><span
+            <li><a href="https://www.linkedin.com/in/matheusmacias/" target="_blank" class="icon brands fa-linkedin"><span
                     class="label">Linkedin</span></a></li>
-            <li><a href="https://github.com/matheusmacias/" class="icon brands fa-github"><span
+            <li><a href="https://github.com/matheusmacias/" target="_blank" class="icon brands fa-github"><span
                     class="label">Github</span></a></li>
             <li>
                 <a href="mailto: matheusmacias3@gmail.com?subject=Contato pelo site&body=Olá Matheus, tudo bem? Gostaria de falar."
                    class="icon solid fa-envelope"><span class="label">Email</span></a></li>
         </ul>
-        Visualizar código fonte no <a href="https://github.com/matheusmacias/portfolio" target="_blank">Github</a>
+
+
+        <span class="d-block">Visualizar código fonte no <a href="https://github.com/matheusmacias/portfolio"
+                                                            target="_blank">Github</a></span>
         <span class="d-block">
             Produzido com <a href="https://www.djangoproject.com/" target="_blank">Django</a>
         </span>

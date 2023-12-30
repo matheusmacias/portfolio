@@ -8,18 +8,8 @@ class ArticleDetailView(DetailView):
     template_name = 'details.html'
     context_object_name = 'article'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['owner'] = User.objects.filter(is_owner=True).first()
-        return context
-
 
 class ArticleListView(ListView):
     model = Article
     template_name = 'list.html'
     context_object_name = 'articles'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['owner'] = User.objects.filter(is_owner=True).first()
-        return context

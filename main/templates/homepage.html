@@ -21,9 +21,9 @@
         </section>
     {% endif %}
 
-    {% if experiences %}
+    {% if owner.experiences %}
         <div class="timeline">
-            {% for experience in experiences %}
+            {% for experience in owner.experiences.all|dictsortreversed:"start_date" %}
                 <div class="entry ">
                     <div class="title">
                         <h3>{{ experience.start_date|date:"Y" }}</h3>
@@ -31,9 +31,20 @@
                     </div>
                     <div class="body">
                         <p>{{ experience.position }}</p>
-                        <ul>
-                            <li>{{ experience.description }}</li>
-                        </ul>
+                        <div class="content-timeline">{{ experience.description|safe }}</div>
+                        {% if experience.technologies.all %}
+                            <div class="technologies d-flex flex-column align-items-center align-items-lg-end small">
+                                <ul class="d-flex m-0 list-unstyled flex-wrap justify-content-center">
+                                    {% for technology in experience.technologies.all %}
+                                        <li>
+                                            <a href="{{ technology.link }}" target="_blank">{{ technology.name }}</a>
+
+                                        </li>
+
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import User, Experience
+from .models import User, Experience, Technology
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 
 
@@ -21,3 +21,4 @@ class CustomUserAdmin(UserAdmin):
 
 
 admin.site.register(Experience)
+admin.site.register(Technology)

@@ -3185,3 +3185,9 @@ body.is-touch .poptrox-popup .closer {
     border-radius: 0.35em;
     object-fit: cover;
 }
+
+.ck-content-blog * {
+    margin-top: 10px;
+    font-family: "Mulish", 'sans-serif' !important;
+    text-align: justify;
+}

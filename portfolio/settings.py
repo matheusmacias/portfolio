@@ -405,6 +405,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'accounts.middleware.CKEditorPathMiddleware',
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
@@ -421,7 +422,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                "dynamic_breadcrumbs.context_processors.breadcrumbs",
+                'dynamic_breadcrumbs.context_processors.breadcrumbs',
+                'accounts.context_processors.owner',
             ],
         },
     },
