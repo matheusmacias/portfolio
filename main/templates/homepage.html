@@ -3,6 +3,28 @@
 
 {% block head %}
     <title>Matheus Macias</title>
+    <meta name="keywords" content="portfolio, matheus macias, desenvolvedor, back-end,front-end, devops, django, boostrap5, python, html, css, javascript, jquery, git, github, bitbucket, docker, linux"/>
+    <meta name="description" content="{{ article.content|striptags|safe|slice:":350" }}{% if article.content|length > 150 %}...{% endif %}"/>
+    <meta property="og:title" content="{{ owner.first_name }} {{ owner.last_name }}"/>
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta property="og:description" content="{{ article.content|striptags|safe|slice:":350" }}{% if article.content|length > 150 %}...{% endif %}"/>
+    <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}"/>
+    <meta property="og:site_name" content="{{ owner.first_name }} {{ owner.last_name }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="{{ owner.avatar.url }}"/>
+    <meta property="og:image:type" content="image/jpg"/>
+    <meta property="og:image:width" content="460"/>
+    <meta property="og:image:height" content="460"/>
+
+    <meta name="twitter:title" content="{{ owner.first_name }} {{ owner.last_name }}"/>
+    <meta name="twitter:description" content="{{ article.content|striptags|safe|slice:":350" }}{% if article.content|length > 150 %}...{% endif %}"/>
+    <meta name="twitter:image" content="{{ owner.avatar.url }}"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@matheusmacias"/>
+    <meta name="twitter:creator" content="@matheusmacias"/>
+    <meta name="twitter:image:alt" content="{{ owner.first_name }} {{ owner.last_name }}"/>
+    <link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}"/>
 {% endblock %}
 {% block content %}
     <!-- One -->
@@ -59,7 +81,8 @@
                 <div class="carousel-inner">
 
                     {% for article_list in article_jobs %}
-                        <div class="carousel-item {% if forloop.first %}active{% endif %}" {% if forloop.first %}data-bs-interval="10000"{% else %}data-bs-interval="5000"{% endif %}>
+                        <div class="carousel-item {% if forloop.first %}active{% endif %}"
+                             {% if forloop.first %}data-bs-interval="10000"{% else %}data-bs-interval="5000"{% endif %}>
                             <div class="row">
                                 {% include 'components/card_carousel.html' with articles=article_list %}
                             </div>
