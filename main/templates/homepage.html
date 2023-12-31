@@ -51,25 +51,56 @@
         </div>
     {% endif %}
 
-    <!-- Two -->
-    <section id="two">
+    <section id="trabalhos">
+        <h2>Trabalhos realizados</h2>
+
+        <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                {% for article_list in article_jobs %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <div class="row">
+                            {% for article in article_list %}
+                                <article class="col-6 work-item">
+                                    <a href="{% if article.link %}{{ article.link }}{% endif %}" target="_blank"
+                                       class="image fit thumb"><img
+                                            src="{% if article.image %}{{ article.image.url }}{% endif %}" alt=""/></a>
+                                    <h3>{{ article.headline }}</h3>
+                                    <p>
+                                        {{ article.content|striptags|safe|slice:":250" }}
+                                                {% if article.content|length > 250 %}...{% endif %}
+                                    </p>
+                                </article>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+    </section>
+
+
+    <section>
         <h2>Últimos posts</h2>
         <div class="row">
             {% include 'components/card.html' with articles=articles %}
         </div>
     </section>
 
-    {% if article_freelance %}
-        <section id="two">
-            <h2>Trabalhos Freelance</h2>
-            <div class="row">
-                {% include 'components/card.html' with articles=article_freelance %}
-            </div>
-        </section>
-    {% endif %}
-
     {% if article_academic %}
-        <section id="two">
+        <section>
             <h2>Trabalhos Acadêmicos</h2>
             <div class="row">
                 {% include 'components/card.html' with articles=article_academic %}

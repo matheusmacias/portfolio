@@ -12,7 +12,10 @@ class Index(TemplateView):
         context['article'] = Article.objects.filter(is_highlighted=True).first()
         context['articles'] = Article.objects.filter(is_highlighted=False).order_by('-created_at')[:4]
         context['article_academic'] = Article.objects.filter(tags__name__in=['Acadêmico'])
-        context['article_freelance'] = Article.objects.filter(tags__name__in=['Freelance'])
+        articles = Article.objects.filter(tags__name__in=['Trabalhos Realizados'])
+        articles_per_list = 2
+        context['article_jobs'] = [list(articles[i:i + articles_per_list]) for i in range(0, len(articles), articles_per_list)]
+
         return context
 
 

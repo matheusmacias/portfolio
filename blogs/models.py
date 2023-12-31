@@ -17,6 +17,7 @@ class Tag(models.Model):
 
 class Article(models.Model):
     headline = models.CharField(max_length=255)
+    link = models.URLField(max_length=255, null=True, blank=True)
     original_headline = models.CharField(max_length=255, editable=False, null=False, blank=False)
     slug = models.SlugField(max_length=255, unique=True, editable=False, null=False, blank=False)
     image = models.ImageField(upload_to='article/images/', blank=True, null=True)
