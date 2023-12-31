@@ -50,47 +50,36 @@
             {% endfor %}
         </div>
     {% endif %}
+    {% if article_jobs %}
+        <section id="trabalhos">
+            <h2>Trabalhos realizados</h2>
 
-    <section id="trabalhos">
-        <h2>Trabalhos realizados</h2>
+            <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
 
-        <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-
-                {% for article_list in article_jobs %}
-                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                        <div class="row">
-                            {% for article in article_list %}
-                                <article class="col-6 work-item">
-                                    <a href="{% if article.link %}{{ article.link }}{% endif %}" target="_blank"
-                                       class="image fit thumb"><img
-                                            src="{% if article.image %}{{ article.image.url }}{% endif %}" alt=""/></a>
-                                    <h3>{{ article.headline }}</h3>
-                                    <p>
-                                        {{ article.content|striptags|safe|slice:":250" }}
-                                                {% if article.content|length > 250 %}...{% endif %}
-                                    </p>
-                                </article>
-                            {% endfor %}
+                    {% for article_list in article_jobs %}
+                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                            <div class="row">
+                                {% include 'components/card_carousel.html' with articles=article_list %}
+                            </div>
                         </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
 
 
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
 
-    </section>
-
+        </section>
+    {% endif %}
 
     <section>
         <h2>Últimos posts</h2>

@@ -10,7 +10,7 @@ class Index(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['article'] = Article.objects.filter(is_highlighted=True).first()
-        context['articles'] = Article.objects.filter(is_highlighted=False).order_by('-created_at')[:4]
+        context['articles'] = Article.objects.filter(is_highlighted=False).exclude(tags__name__in=['Trabalhos Realizados']).order_by('-created_at')[:4]
         context['article_academic'] = Article.objects.filter(tags__name__in=['Acadêmico'])
         articles = Article.objects.filter(tags__name__in=['Trabalhos Realizados'])
         articles_per_list = 2

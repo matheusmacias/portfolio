@@ -1,8 +1,8 @@
 {% load static %}
 {% if articles %}
     {% for article in articles %}
-        <article class="col-6 col-12-xsmall work-item">
-            <a href="{% if not article.link %}{% url 'blogs:article_detail' article.slug %}{% else %}{{ article.link }}{% endif %}" class="image fit thumb">
+        <article class="col-6 work-item">
+            <a target="_blank" href="{% if not article.link %}{% url 'blogs:article_detail' article.slug %}{% else %}{{ article.link }}{% endif %}" class="image fit thumb">
                 <div class="image-container">
                     {% if article.image %}
                         <div class="overlay-card"></div>

@@ -22,6 +22,13 @@
                 {% else %}
                     <span class="meta d-block mb-2">Publicado - {{ article.created_at|date:"d/m/Y  H:i" }}</span>
                 {% endif %}
+                <ul class="icons m-0">
+                    {% if article.link %}
+                        <li><a href="{{ article.link }}" target="_blank"><i class="bi bi-link-45deg h5"></i> <span class="">{{ article.link }}</span></a>
+                        </li>
+                    {% endif %}
+                </ul>
+
             </header>
             <span class="ck ck-content ck-content-blog">
                 {{ article.content|safe }}

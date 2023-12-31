@@ -13,3 +13,6 @@ class ArticleListView(ListView):
     model = Article
     template_name = 'list.html'
     context_object_name = 'articles'
+
+    def get_queryset(self):
+        return Article.objects.all().exclude(tags__name__in=['Trabalhos Realizados']).order_by('-created_at')
