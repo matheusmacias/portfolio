@@ -5,7 +5,7 @@
     <title>{{ article.headline }}</title>
 
         <meta property="og:title" content="{{ article.headline|safe }}">
-    <meta property="og:description" content="{{ article.content|striptags|slice:" :200"|safe }}">
+    <meta property="og:description" content="{{ article.content|striptags|safe|slice:":450" }}">
     <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% if article.image %}{{ article.image.url }}{% endif %}">
     <meta property="og:url" content="{{ request.build_absolute_uri }}">
     <meta property="og:site_name" content="Blog">
@@ -14,7 +14,7 @@
     <meta name="keywords" content="{{ article.tags.all|join:" , " }}">
     <meta name="robots" content="index, follow">
     <meta name="title" content="{{ article.headline|safe }}">
-    <meta name="description" content="{{ article.content|striptags|slice:" :200"|safe }}">
+    <meta name="description" content="{{ article.content|striptags|safe|slice:":450" }}">
     <link rel="canonical" href="{{ request.build_absolute_uri }}">
     <meta name="googlebot" content="index, follow">
     <meta name="author" content="{% for author in article.authors.all %}{{ author }}{% endfor %} ">
@@ -24,7 +24,7 @@
     <meta property="article:section" content="{{ article.post_type }}">
     <meta property="article:tag" content="{{ article.tags.all|join:" , " }}">
     <meta name="twitter:title" content="{{ article.headline|safe }}">
-    <meta name="twitter:description" content="{{ article.content|striptags|slice:" :200"|safe }}">
+    <meta name="twitter:description" content="{{ article.content|striptags|safe|slice:":450" }}">
     <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% if article.image %}{{ article.image.url }}{% endif %}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:domain" content="{{ request.build_absolute_uri }}">
