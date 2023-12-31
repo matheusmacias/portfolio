@@ -109,7 +109,7 @@
         <section>
             <h2>Trabalhos Acadêmicos</h2>
             <div class="row">
-                {% include 'components/card.html' with articles=article_academic %}
+                {% include 'components/card.html' with articles=article_academic url_link='blogs:article_detail' %}
             </div>
         </section>
     {% endif %}
@@ -117,7 +117,7 @@
     <section>
         <h2>Últimos posts</h2>
         <div class="row">
-            {% include 'components/card.html' with articles=articles %}
+            {% include 'components/card.html' with articles=articles url_link='blogs:article_detail' %}
         </div>
     </section>
 
