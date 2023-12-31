@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    <title>Blogs</title>
+    <title>Trabalhos</title>
 {% endblock %}
 
 {% block content %}
@@ -9,9 +9,9 @@
         {% if breadcrumbs %}
             {% include "dynamic_breadcrumbs/breadcrumbs.html" with breadcrumbs=breadcrumbs %}
         {% endif %}
-        <h1 class="h3 mb-4">Posts em Geral</h1>
+        <h1 class="h3 mb-4">Trabalhos</h1>
         <div class="row">
-            {% include 'components/card.html' with url_link='blogs:article_detail' %}
+            {% include 'components/card.html' with url_link='main:article_work_detail' %}
         </div>
     </section>
 {% endblock %}

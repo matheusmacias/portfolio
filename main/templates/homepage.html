@@ -52,13 +52,14 @@
     {% endif %}
     {% if article_jobs %}
         <section id="trabalhos">
-            <h2>Trabalhos realizados</h2>
+            <h2>Trabalhos realizados <a href="{% url 'main:article_work_list' %}" class="fs-6 ms-2">Visualizar todos<i
+                    class="bi bi-chevron-right text-decoration-none"></i></a></h2>
 
             <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
 
                     {% for article_list in article_jobs %}
-                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <div class="carousel-item {% if forloop.first %}active{% endif %}" {% if forloop.first %}data-bs-interval="10000"{% else %}data-bs-interval="5000"{% endif %}>
                             <div class="row">
                                 {% include 'components/card_carousel.html' with articles=article_list %}
                             </div>
@@ -77,16 +78,9 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-
+            </div>
         </section>
     {% endif %}
-
-    <section>
-        <h2>Últimos posts</h2>
-        <div class="row">
-            {% include 'components/card.html' with articles=articles %}
-        </div>
-    </section>
 
     {% if article_academic %}
         <section>
@@ -96,6 +90,13 @@
             </div>
         </section>
     {% endif %}
+
+    <section>
+        <h2>Últimos posts</h2>
+        <div class="row">
+            {% include 'components/card.html' with articles=articles %}
+        </div>
+    </section>
 
     {% include 'components/button.html' with button_url='blogs:article_list' button_text='Visualizar todas as publicações' %}
 {% endblock %}

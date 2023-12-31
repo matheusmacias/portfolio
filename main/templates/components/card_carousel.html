@@ -2,7 +2,7 @@
 {% if articles %}
     {% for article in articles %}
         <article class="col-6 work-item">
-            <a target="_blank" href="{% if not article.link %}{% url 'blogs:article_detail' article.slug %}{% else %}{{ article.link }}{% endif %}" class="image fit thumb">
+            <a target="_blank" href="{% if not article.link %}{% url 'main:article_work_detail' article.slug %}{% else %}{{ article.link }}{% endif %}" class="image fit thumb">
                 <div class="image-container">
                     {% if article.image %}
                         <div class="overlay-card"></div>
@@ -13,7 +13,7 @@
                 </div>
             </a>
 
-            <a href="{% url 'blogs:article_detail' article.slug %}" class="text-secondary">
+            <a href="{% url 'main:article_work_detail' article.slug %}" class="text-secondary">
                 <h3>{{ article.headline }}</h3>
                 <p>{{ article.content|striptags|safe|slice:":150" }}{% if article.content|length > 150 %}
                     ...{% endif %}</p>
