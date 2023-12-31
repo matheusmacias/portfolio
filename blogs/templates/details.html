@@ -33,7 +33,7 @@
         {
           "@context": "https://schema.org",
           "@type": "NewsArticle",
-          "headline": "{{ article.title|safe }}",
+          "headline": "{{ article.headline|safe }}",
           "image": "{{ request.scheme }}://{{ request.get_host }}{% if article.image %}{{ article.image.url }}{% endif %}",
           "datePublished": "{{ article.created_at|date:'Y-m-d\TH:i:sP' }}",
           "dateModified": "{{ article.updated_at|date:'Y-m-d\TH:i:sP' }}",
